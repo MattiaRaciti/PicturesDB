@@ -55,7 +55,14 @@ header {
   align-items: center;
   justify-content: center;
   
-  background-image: url("../img/sfondo_intestazione.jpg");
+  background:
+    linear-gradient(
+      135deg,
+      #1e5f8a 0%,
+      #3d8db0 55%,
+      #8fc7d9 100%
+    );
+    
   background-size: cover;
   background-position: top;
 }
