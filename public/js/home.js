@@ -205,7 +205,7 @@ function onJsonUser(json){
 			favorite_button.appendChild(favorite_button_text);
 			
 			const img = document.createElement('img');
-			img.src = ("./img/default_user.jpg");
+			img.src = ("./img/default_user.svg");
 			
 			block.appendChild(img);
 			block.appendChild(username_text);
