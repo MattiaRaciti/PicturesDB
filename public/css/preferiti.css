@@ -67,30 +67,39 @@ header {
   background-position: top;
 }
 
-.button{
-	padding: 8px 12px;
-	border: 2px solid rgba(31, 31, 31, 0.3);
-	margin: 8px;
-	background-color: rgb(59, 133, 38);
-	color: white;
-	cursor: pointer;
-	text-decoration: none;
+.button {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 2px solid rgba(31, 31, 31, 0.3);
+  border-radius: 6px;
+  background-color: #3f7f32;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .button:hover {
-	background-color: rgb(31, 31, 31);
-	color: white;
+  background-color: rgb(31, 31, 31);
+  border-color: rgb(31, 31, 31);
+  color: #ffffff;
 }
 
 .favorite_button{
-	padding: 0px 10px;
-	border: 2px solid rgba(31, 31, 31, 0.3);
-	margin-top: 7px;
-	margin-bottom: 5px;
-	background-color: rgb(153, 0, 0);
-	color: white;
-	cursor: pointer;
-	border-radius: 100px;
+  margin-top: 10px;
+  padding: 7px 14px;
+  border: 1px solid #7f1d1d;
+  border-radius: 6px;
+  background-color: #a93232;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
 }
 
 .favorite_button:hover {

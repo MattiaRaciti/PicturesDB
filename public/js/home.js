@@ -80,7 +80,7 @@ function onJson(json){
         favorite_button.classList.add('favorite_button');
 
         const favorite_button_text =
-            document.createTextNode('Aggiungi ai preferiti');
+            document.createTextNode('Add to favorites');
 
         favorite_button.appendChild(favorite_button_text);
 
@@ -135,7 +135,7 @@ function seleziona(event) {
 
     buttons[indiceDaSegnare].classList.add('favorite_added');
 
-    var favorite_added_text = document.createTextNode('Aggiunto ai preferiti!');
+    var favorite_added_text = document.createTextNode('Saved to favorites');
 	buttons[indiceDaSegnare].appendChild(favorite_added_text);
 
     const imageUrl = urls[indiceDaSegnareDatabase];

@@ -61,93 +61,96 @@ header h1 strong,
 	margin-right: 200px;
 }
 
-.favorite_button{
-	padding: 0px 10px;
-	border: 2px solid rgba(31, 31, 31, 0.3);
-	margin-top: 7px;
-	margin-bottom: 5px;
-	background-color: rgb(77, 77, 255);
-	color: white;
-	cursor: pointer;
-	border-radius: 100px;
+.favorite_button,
+.favorite_added,
+.like_button,
+.undo_like,
+.button,
+.button_b,
+.submit {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 2px solid rgba(31, 31, 31, 0.3);
+
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-.favorite_button:hover {
-	background-color: rgb(31, 31, 31);
-	color: white;
+.favorite_button,
+.like_button,
+.button,
+.submit {
+  background-color: #3f7f32;
+  border-color: #2f6f3e;
 }
 
-.favorite_added{
-	padding: 0px 10px;
-	border: 2px solid rgba(31, 31, 31, 0.3);
-	margin-top: 7px;
-	margin-bottom: 5px;
-	background-color: rgb(59, 133, 38);
-	color: white;
+.favorite_button {
+  margin-top: 10px;
 }
 
-.like_button{
-	padding: 10px 10px;
-	border: 2px solid rgba(31, 31, 31, 0.3);
-	margin-top: 10px;
-	margin-bottom: 10px;
-	background-color: rgb(59, 133, 38);
-	color: white;
-	cursor: pointer;
-	border-radius: 100px;
+.undo_like,
+.button_b {
+  background-color: #a93232;
+  border-color: #7f1d1d;
 }
 
-.like_button:hover {
-	background-color: rgb(31, 31, 31);
-	color: white;
+.button:hover,
+.favorite_button:hover,
+.like_button:hover,
+.submit:hover {
+  background-color: rgb(31, 31, 31);
+  border-color: rgb(31, 31, 31);
+  color: #ffffff;
 }
 
-.undo_like{
-	padding: 10px 10px;
-	border: 2px solid rgba(31, 31, 31, 0.3);
-	margin-top: 10px;
-	margin-bottom: 10px;
-	background-color: rgb(153, 0, 0);
-	color: white;
-	cursor: pointer;
-	border-radius: 100px;
-}
-
+.button_b:hover,
 .undo_like:hover {
-	background-color: rgb(31, 31, 31);
-	color: white;
+  background-color: rgb(31, 31, 31);
+  border-color: rgb(31, 31, 31);
+  color: #ffffff;
 }
 
-
-
-.button{
-	padding: 0px 10px;
-	border: 2px solid rgba(31, 31, 31, 0.3);
-	background-color: rgb(59, 133, 38);
-	color: white;
-	cursor: pointer;
-	text-decoration: none;
+.favorite_button:focus-visible,
+.like_button:focus-visible,
+.undo_like:focus-visible,
+.button:focus-visible,
+.button_b:focus-visible,
+.submit:focus-visible {
+  outline: 3px solid #f4d35e;
+  outline-offset: 3px;
 }
 
-.button:hover {
-	background-color: rgb(31, 31, 31);
-	color: white;
+.favorite_added {
+  background-color: #276b80;
+  border-color: #1d5263;
+  cursor: default;
+  margin-top: 10px;
 }
 
-.button_b{
-	padding: 0px 10px;
-	border: 2px solid rgb(42, 42, 120);
-	color: white;
-	background-color: rgb(153, 0, 0);
-	cursor: pointer;
-	text-decoration: none;
+.undo_like,
+.button_b {
+  background-color: #a93232;
+  border-color: #882727;
 }
 
+.undo_like:hover,
 .button_b:hover {
-	background-color: rgb(31, 31, 31);
-	color: white;
+  background-color: rgb(31, 31, 31);
+  border-color: rgb(31, 31, 31);
+  color: #ffffff;
 }
 
+.button:focus-visible,
+.button:focus-visible {
+  outline: 3px solid #f4d35e;
+  outline-offset: 3px;
+}
 .submit{
 	padding: 5px 18px;
 	border: 2px solid rgba(31, 31, 31, 0.3);
@@ -198,6 +201,7 @@ label{
 header h1 {
   font-size: 1.2em;
   line-height: 1.5;
+  margin-top: 55px;
 }
 
 header {
