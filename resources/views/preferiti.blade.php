@@ -15,17 +15,17 @@
 	</head>
 
 	<body>
-		<header>
-			<div>
-				<h1>
-					<strong>Your favorites</strong>
-				</h1>
-			</div>
+		<header class="favorites-header">
+			<span class="favorites-logo">PicturesDB</span>
+
+			<h1>
+				<strong>Your favorites</strong>
+			</h1>
 		</header>
-		
-		<nav id="links">
+
+		<section id="likes-info">
 			<a href="{{url('home')}}" class="button">Back</a>
-		</nav>
+		</section>
 
 		<section id = "error-view">	
 		</section>

@@ -3,9 +3,9 @@ span.error{
 	font-size: 1.5em;
 }
 
-#error-view{
-	display: flex;
-	justify-content: center;
+#error-view {
+display: block;
+padding-top: 40px;
 }
 
 header h1 em {
@@ -13,6 +13,33 @@ header h1 em {
   letter-spacing: 1px;
   color : white;
 }
+
+#likes-info {
+display: flex;
+align-items: center;
+gap: 50px;
+margin-top: 25px;
+padding: 10px 60px;
+color: #333333;
+font-family: 'Montserrat', Arial, sans-serif;
+font-size: 1.2em;
+font-weight: 400;
+line-height: 1.2;
+}
+
+#likes-info .favorites_text {
+color: #333333;
+font-family: 'Montserrat', Arial, sans-serif;
+font-size: 1.27em;
+font-weight: 400;
+line-height: 1.2;
+margin: 0;
+}
+
+#likes-info .button {
+display: inline-block;
+}
+
 #links {
   font-family: 'Montserrat', serif;
   font-style: normal;
@@ -31,19 +58,56 @@ header h1 em {
   color: black;
 }
 
-nav {
+body > nav {
   font-size: 1.1em;
   padding: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 
   justify-content: start;
   align-items: flex-start;
 }
 
-header h1 {
-  font-size: 2.5em;
-  line-height: 1.5;
-  color: black;
+.favorites-header {
+position: relative;
+min-height: 148px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.favorites-logo {
+position: absolute;
+left: 260px;
+top: 50%;
+transform: translateY(-50%);
+color: white;
+font-size: 1.85em;              
+font-family: 'Montserrat', serif;
+font-style: normal;
+font-weight: normal;
+letter-spacing: 2px;           
+text-decoration: none;
+}
+
+.favorites-header h1 {
+margin: 0;
+font-size: 1.2em;
+line-height: 1;
+text-align: center;
+color: white;
+font-family: 'Montserrat', serif;
+font-style: normal;
+}
+
+.favorites-header h1 strong {
+display: inline-block;
+vertical-align: middle;
+text-align: center;
+color: #f0f740;
+
+font-size: 2em;
+letter-spacing: 4px;
+font-weight: bold;
 }
 
 header {
@@ -104,9 +168,9 @@ header {
 
 .favorite_button:hover {
 	background-color: rgb(31, 31, 31);
+  border-color: rgb(31, 31, 31);
 	color: white;
 }
-
 
 #library-view .block {
   margin: 0px;
@@ -139,7 +203,7 @@ header {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 20px;
   padding: 0px;
-  margin: 15px 20px;
+  margin: -17px 20px 15px;
   align-items: start;
 }
 

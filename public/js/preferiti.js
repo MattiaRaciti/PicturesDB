@@ -20,11 +20,19 @@ function onLikeNumber(json){
 	}
 	console.log("Likes: " + likes);
 
-	const header_view = document.querySelector('#links');
+	const header_view = document.querySelector('#likes-info');
 	
 	const header = document.createElement('a2');
 
-	var header_text = document.createTextNode("Your collection has " + likes + " likes");
+	let header_text; 
+
+	if (likes === 0) {
+		header_text = document.createTextNode("Your collection has no likes yet");
+	} else if (likes === 1) {
+		header_text = document.createTextNode("Your collection has 1 like");
+	} else {
+		header_text = document.createTextNode("Your collection has " + likes + " likes");
+	}
 
 	header.appendChild(header_text);
 	header_view.appendChild(header);
@@ -89,31 +97,13 @@ function onFavorite(json){
 	
 }
 
-
 function seleziona(event){
-	cells = document.querySelectorAll('div');
-	buttons = document.querySelectorAll('.favorite_button');
-	
-	let i = 0;
-	for (const button of buttons)
-	{
-		button.setAttribute('data-index_array', i);
-		i++;
-	}
-	
-	const container = event.currentTarget;
-	
-	let indiceDaSegnareDatabase = parseInt(container.dataset.index);
-	let indiceDaSegnare = parseInt(container.dataset.index_array);
-	
-	cells[indiceDaSegnare+1].remove();
-	
-	fetch(BASE_URL + "remove_favorite/" + indiceDaSegnareDatabase);
-	
-	cells = document.querySelectorAll('div');
-	
-	for (const button of buttons)
-	{
-		button.removeAttribute('data-index_array');
-	}
+    const container = event.currentTarget.closest('.block');
+
+    const indiceDaSegnareDatabase = parseInt(
+        event.currentTarget.dataset.index
+    );
+
+    container.remove();
+    fetch(BASE_URL + "remove_favorite/" + indiceDaSegnareDatabase);
 }
