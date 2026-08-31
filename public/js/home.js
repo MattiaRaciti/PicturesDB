@@ -63,9 +63,15 @@ function onJson(json){
     urls = [];
     jsons = [];
 
+	let displayedImages = 0;
+
     for (let i = 0; i < json.results.length; i++) {
         const result = json.results[i];
         const cover_url = result.thumbnail;
+
+		if (!cover_url || !result.url) {
+            continue;
+        }
 
         urls[i] = result.url;
         jsons[i] = result;
@@ -79,66 +85,45 @@ function onJson(json){
         block.classList.add('block');
         favorite_button.classList.add('favorite_button');
 
-        const favorite_button_text =
-            document.createTextNode('Add to favorites');
+        const favorite_button_text = document.createTextNode('Add to favorites');
 
         favorite_button.appendChild(favorite_button_text);
 
         const img = document.createElement('img');
-        img.src = cover_url;
-        img.alt = result.title || 'Openverse image';
+
+		img.alt = result.title || 'Openverse image';
+
+		img.addEventListener('load', function() {
+
+			if (displayedImages >= 12) {
+                return;
+            }
+
+            block.appendChild(img);
+            block.appendChild(favorite_button);
+            library.appendChild(block);
+
+			favorite_button.addEventListener('click', seleziona);
+
+			displayedImages++;
+        });
 
 		img.addEventListener('error', function() {
-    		block.remove();
-		});
+        });
 
 		img.src = cover_url;
-
-		if (img.complete && img.naturalWidth === 0) {
-			block.remove();
-		}
-
-        block.appendChild(img);
-        block.appendChild(favorite_button);
-
-        library.appendChild(block);
-    }
-
-    const buttons = document.querySelectorAll('.favorite_button');
-
-    for (const button of buttons) {
-        button.addEventListener('click', seleziona);
     }
 }
 
 function seleziona(event) {
-    buttons = document.querySelectorAll('.favorite_button');
+	const button = event.currentTarget;
+	const index = parseInt(button.dataset.index, 10);
 
-    let n = 0;
-    for (const button of buttons) {
-        button.setAttribute('data-index_array', n);
-        n++;
-    }
-
-    const container = event.currentTarget;
-
-    let indiceDaSegnareDatabase = parseInt(container.dataset.index);
-    let indiceDaSegnare = parseInt(container.dataset.index_array);
-
-    buttons[indiceDaSegnare].classList.remove('favorite_button');
-
-    buttons[indiceDaSegnare].removeEventListener('click', seleziona);
-
-    let testoDaRimuovere = buttons[indiceDaSegnare].childNodes[0];
-
-    buttons[indiceDaSegnare].removeChild(testoDaRimuovere);
-
-    buttons[indiceDaSegnare].classList.add('favorite_added');
-
-    var favorite_added_text = document.createTextNode('Saved to favorites');
-	buttons[indiceDaSegnare].appendChild(favorite_added_text);
-
-    const imageUrl = urls[indiceDaSegnareDatabase];
+	button.removeEventListener('click', seleziona);
+    button.classList.remove('favorite_button');
+    button.classList.add('favorite_added');
+    button.textContent = 'Saved to favorites';
+	const imageUrl = urls[index];
 
     fetch(BASE_URL + 'add_favorite', {
         method: 'POST',
@@ -226,7 +211,7 @@ function onJsonUser(json){
 		header_view.innerHTML = '';
 		
 		const error = document.createElement('span');
-		var error_text = document.createTextNode("Nessun utente trovato");
+		var error_text = document.createTextNode("No user found");
 		
 		error.appendChild(error_text);
 		error.classList.add('error');

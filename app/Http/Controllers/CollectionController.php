@@ -48,12 +48,13 @@ class CollectionController extends BaseController {
             ]);
         }
 
-        $response = Http::timeout(15)
+        $response = Http::timeout(30)
+            ->retry(2, 1000)
             ->acceptJson()
             ->get('https://api.openverse.org/v1/images/', [
                 'q' => $search_param,
                 'license' => 'cc0,pdm',
-                'page_size' => 18,
+                'page_size' => 20,
             ]);
 
         if ($response->failed()) {

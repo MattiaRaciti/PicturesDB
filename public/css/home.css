@@ -100,7 +100,6 @@ header h1 strong,
 .submit {
   background-color: #3f7f32;
   border-color: #2f6f3e;
-  margin-left: -7px;
 }
 
 .favorite_button {
@@ -145,6 +144,9 @@ header h1 strong,
 }
 
 .favorite_added {
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
   background-color: #276b80;
   border-color: #1d5263;
   cursor: default;
