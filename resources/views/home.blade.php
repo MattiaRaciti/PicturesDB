@@ -44,14 +44,15 @@
     <section id="search-view">
       <form>
         <label>
-          Search:
+          Search for:
+            
+          <select class="search-type" name="tipo" id="tipo">
+            <option value="image">Image</option>
+            <option value="user">User</option>
+          </select>
+
           <input type="text" name="content" id="content">
         </label>
-
-        <select name="tipo" id="tipo">
-          <option value="image">Image</option>
-          <option value="user">User</option>
-        </select>
 
         <label>
           &nbsp;<input class="submit" type="submit">
@@ -60,6 +61,7 @@
     </section>
 
     <section id="header-view">
+      <p id="empty-state">Enter a search term to get started.</p>
     </section>
 
     <section id="library-view">

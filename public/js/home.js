@@ -32,7 +32,7 @@ function search(event){
 		event.preventDefault();
 	}	
 	else {
-		alert("Inserisci il testo per cui effettuare la ricerca");
+		alert("Please enter a search term.");
 	}
 }
 
@@ -257,23 +257,30 @@ function onFavoriteUser(json){
 			console.log(json.success);
 			console.log(json.like_presente);
 			console.log(json);
+
+			const collection_header = document.createElement('div');
+			collection_header.classList.add('collection-header');
 			
 			const header = document.createElement('h1');
+			header.classList.add('collection-title');
+
 			var header_text = document.createTextNode(json.content[0].username + "'s favorites");
 			header.appendChild(header_text);
-			header_view.appendChild(header);
+
+        	collection_header.appendChild(header);
 			
 			const like_button = document.createElement('a');
 			like_button.classList.add('like_button');
 			var like_text = document.createTextNode("Like");
 			like_button.appendChild(like_text);
-			header_view.appendChild(like_button);
-			
-			const like_button_selected = document.querySelector('.like_button');
-			
-			
-			like_button_selected.setAttribute('data-index', json.content[0].username);
-			like_button_selected.addEventListener("click", sendLike);
+
+			collection_header.appendChild(like_button);
+        	header_view.appendChild(collection_header);
+
+			header_view.appendChild(collection_header);
+
+			like_button.setAttribute('data-index', json.content[0].username);
+			like_button.addEventListener("click", sendLike);
 			
 			for(const element of json.content){
 				const cover_url = element.url;
@@ -295,23 +302,29 @@ function onFavoriteUser(json){
 		else
 		{
 			const header_view = document.querySelector('#header-view');
+
+			const collection_header = document.createElement('div');
+			collection_header.classList.add('collection-header');
 			
 			const header = document.createElement('h1');
+			header.classList.add('collection-title');
+
 			var header_text = document.createTextNode(json.content[0].username + "'s favorites");
 			header.appendChild(header_text);
-			header_view.appendChild(header);
 			
 			const like_button = document.createElement('a');
 			like_button.classList.add('undo_like');
+
 			var like_text = document.createTextNode("Unlike collection");
 			like_button.appendChild(like_text);
-			header_view.appendChild(like_button);
 			
-			const like_button_selected = document.querySelector('.undo_like');
-			
-			
-			like_button_selected.setAttribute('data-index', json.content[0].username);
-			like_button_selected.addEventListener("click", undoLike);
+			collection_header.appendChild(header);
+			collection_header.appendChild(like_button);
+
+			header_view.appendChild(collection_header);
+
+			like_button.setAttribute('data-index', json.content[0].username);
+    		like_button.addEventListener("click", undoLike);
 			
 			for(const element of json.content){
 				const cover_url = element.url;

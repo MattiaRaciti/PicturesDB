@@ -4,8 +4,10 @@ span.error{
 }
 
 #error-view {
-display: block;
-padding-top: 40px;
+  display: block;
+  padding-top: 40px;
+  padding-left: 60px;
+  text-align: left;
 }
 
 header h1 em {
@@ -15,29 +17,29 @@ header h1 em {
 }
 
 #likes-info {
-display: flex;
-align-items: center;
-gap: 50px;
-margin-top: 25px;
-padding: 10px 60px;
-color: #333333;
-font-family: 'Montserrat', Arial, sans-serif;
-font-size: 1.2em;
-font-weight: 400;
-line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 25px;
+  padding: 10px 60px;
+  color: #333333;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 #likes-info .favorites_text {
-color: #333333;
-font-family: 'Montserrat', Arial, sans-serif;
-font-size: 1.27em;
-font-weight: 400;
-line-height: 1.2;
-margin: 0;
+  color: #333333;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.27em;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
 }
 
 #likes-info .button {
-display: inline-block;
+  display: inline-block;
 }
 
 #links {
@@ -68,46 +70,46 @@ body > nav {
 }
 
 .favorites-header {
-position: relative;
-min-height: 148px;
-display: flex;
-align-items: center;
-justify-content: center;
+  position: relative;
+  min-height: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .favorites-logo {
-position: absolute;
-left: 260px;
-top: 50%;
-transform: translateY(-50%);
-color: white;
-font-size: 1.85em;              
-font-family: 'Montserrat', serif;
-font-style: normal;
-font-weight: normal;
-letter-spacing: 2px;           
-text-decoration: none;
+  position: absolute;
+  left: 260px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.85em;              
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 2px;           
+  text-decoration: none;
 }
 
 .favorites-header h1 {
-margin: 0;
-font-size: 1.2em;
-line-height: 1;
-text-align: center;
-color: white;
-font-family: 'Montserrat', serif;
-font-style: normal;
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
 }
 
 .favorites-header h1 strong {
-display: inline-block;
-vertical-align: middle;
-text-align: center;
-color: #f0f740;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  color: #f0f740;
 
-font-size: 2em;
-letter-spacing: 4px;
-font-weight: bold;
+  font-size: 2em;
+  letter-spacing: 4px;
+  font-weight: bold;
 }
 
 header {
