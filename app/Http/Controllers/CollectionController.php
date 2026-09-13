@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -48,8 +49,11 @@ class CollectionController extends BaseController {
             ]);
         }
 
-        $response = Http::timeout(30)
-            ->retry(2, 1000)
+        try {
+            $response = Http::connectTimeout(5)
+            ->timeout(12)
+            ->acceptJson()
+            ->retry(1, 500)
             ->acceptJson()
             ->get('https://api.openverse.org/v1/images/', [
                 'q' => $search_param,
@@ -57,9 +61,15 @@ class CollectionController extends BaseController {
                 'page_size' => 20,
             ]);
 
+        } catch (ConnectionException $exception) {
+            return response()->json([
+                'error' => 'The Openverse service is temporarily unavailable.'
+            ], 503);
+        }
+
         if ($response->failed()) {
             return response()->json([
-                'error' => 'Openverse image search failed.'
+                'error' => 'Openverse returned an error.'
             ], 502);
         }
 

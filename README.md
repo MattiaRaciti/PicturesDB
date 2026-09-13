@@ -6,6 +6,16 @@ It was originally created in 2022 as a university project. In 2026, I restored
 the application and replaced its discontinued Bing Image Search/RapidAPI
 integration with the Openverse API.
 
+## Screenshots
+
+### Image Search
+
+![PicturesDB image search page](screenshots/search-page.png)
+
+### Favorites
+
+![PicturesDB favorites page](screenshots/favorites-page.png)
+
 ## Features
 
 - User registration and login
